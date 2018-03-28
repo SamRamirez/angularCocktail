@@ -1,0 +1,20 @@
+<div>
+
+  <div *ngIf="recipe">
+
+    <ul>
+      <li *ngFor="let varLocale of recipe.ingredients">
+        {{ varLocale.name}}
+      </li>
+    </ul>
+  </div>
+
+  <button routerLink="/recipes">
+    <span>acceuil</span>
+  </button>
+
+  <button (click)="delete()">
+      deletion
+    </button>
+
+</div>

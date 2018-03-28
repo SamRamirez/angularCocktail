@@ -1,0 +1,17 @@
+<p>
+  recipe-add works!
+</p>
+
+<input id="name" placeholder="nom" [(ngModel)]="newRecipe.name"/>
+<br>
+<input id="description" placeholder="description" [(ngModel)]="newRecipe.description"/>
+<br>
+<input id="image" placeholder="image" [(ngModel)]="newRecipe.picture">
+<br>
+<!-- <button (click)="submitMethod()" routerLink="/recipes">
+  <span> Submit </span>
+</button> -->
+
+<button (click)="submitMethod()" routerLink="/recipes">
+  <span> Submit </span>
+</button>

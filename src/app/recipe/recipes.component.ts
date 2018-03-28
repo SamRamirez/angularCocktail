@@ -1,21 +1,19 @@
-import { mock_recipes } from './recipes.mock';
-import { Recipe } from './model/recipe.model';
+import { RecipeService } from './../recipe.service';
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from './recipe.service';
-
-
+import { Recipe } from '../model/recipe.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-recipes',
+  templateUrl: './recipes.component.html',
+  styleUrls: ['./recipes.component.css']
 })
-export class AppComponent /*implements OnInit*/ {
-  recipes: Recipe[] = mock_recipes;
+export class RecipesComponent implements OnInit {
+
+  recipes: Recipe[] = [];
 
   constructor(private recipeService: RecipeService) {}
-  
-  /* ngOnInit(): void {
+
+  ngOnInit(): void {
     this.getRecipes();
     /*const recipe1 = new Recipe();
     recipe1.name = 'Ti\'Punch';
@@ -31,7 +29,7 @@ export class AppComponent /*implements OnInit*/ {
 
     this.recipes.push(recipe1);
     this.recipes.push(recipe2);
-    this.recipes.push(recipe3);   fallait fin de comment ici
+    this.recipes.push(recipe3);*/
   }
 
 
@@ -39,6 +37,6 @@ export class AppComponent /*implements OnInit*/ {
   getRecipes(): void{
     this.recipeService.getRecipes().subscribe( recipes => 
       this.recipes = recipes, () => console.error("error"));
-  } */
+  }
 
 }

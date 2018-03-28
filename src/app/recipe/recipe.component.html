@@ -1,0 +1,41 @@
+<mat-card class="exemple-card">
+<div>
+    <mat-card-title>
+      <h3>{{recipe.name}}</h3> 
+    </mat-card-title>  
+
+    <img mat-card-image [src]="recipe.picture">
+
+    <mat-card-content>
+      <span>{{recipe.description}}</span>
+    </mat-card-content>
+
+
+    <mat-card-actions>
+        <!--<button mat-raised-button color="primary" (click)="toggleExpand()" *ngIf="isExpanded">
+          afficher moins
+        </button>
+        <button mat-raised-button color="primary" (click)="toggleExpand()" *ngIf="!isExpanded">
+          afficher plus
+        </button>-->
+
+        <!-- <button (click)="toggleExpand()">
+          <span *ngIf="!isExpanded">see more</span>
+          <span *ngIf="isExpanded">see less</span>
+        </button> -->
+
+        <button routerLink="/recipes/{{ recipe.id }}">
+          <span>see more</span>
+        </button>
+        
+    </mat-card-actions>    
+
+    <!-- <div *ngIf="isExpanded">
+      <ul>
+        <li *ngFor="let varLocale of recipe.ingredients">
+          {{ varLocale.name}}
+        </li>
+      </ul>
+    </div> -->
+</div>
+</mat-card>
