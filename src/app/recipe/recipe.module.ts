@@ -7,14 +7,15 @@ import { RecipeComponent } from './recipe.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeAddComponent } from '../recipe-add/recipe-add.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CustomMaterialModule,
     CommonModule,
     RouterModule, 
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     //RecipeComponent,
     //RecipesComponent
   ],

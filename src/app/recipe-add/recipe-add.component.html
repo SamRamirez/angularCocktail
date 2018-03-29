@@ -2,16 +2,32 @@
   recipe-add works!
 </p>
 
-<input id="name" placeholder="nom" [(ngModel)]="newRecipe.name"/>
+<!-- <input id="name" placeholder="nom" [(ngModel)]="newRecipe.name"/>
 <br>
 <input id="description" placeholder="description" [(ngModel)]="newRecipe.description"/>
 <br>
 <input id="image" placeholder="image" [(ngModel)]="newRecipe.picture">
-<br>
+<br> -->
 <!-- <button (click)="submitMethod()" routerLink="/recipes">
   <span> Submit </span>
 </button> -->
 
-<button (click)="submitMethod()" routerLink="/recipes">
+  <form [formGroup]="recipeAddFormGroup">
+    <div class="form-group">
+      <label class="center-block">Name:
+        <input class="form-control" formControlName="name">
+      </label>
+      <label class="center-block">Description:
+        <input class="form-control" formControlName="description">
+      </label>
+      <label class="center-block">Image:
+        <input class="form-control" formControlName="picture">
+      </label>
+    </div>
+  </form>
+
+  <p>Form value: {{ recipeAddFormGroup.value | json }}</p> 
+
+<button [disabled]="!recipeAddFormGroup.valid" (click)="submitMethod()" routerLink="/recipes">
   <span> Submit </span>
 </button>
